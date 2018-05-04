@@ -1,41 +1,36 @@
 
-# This is an update to the Arg!Seq 16S processing script for processing Argonne's EMP formatted reads.
-### Author and version information:
-version = "0.9"
-author = "JGrif"
-date = "10/18/17"
-# git_repo: finish
+## ArgSeq & UICSeq ReadMe
+This repo contains workflow scripts for processing Argonne's EMP formatted reads.
 
 ### EMP Format Description:
-# Argonne deliver reads in a 3 file format - 1 forward and reverse file and a separate file with barcodes.
+- Argonne deliver reads in a 3 file format - 1 forward and reverse file and a separate file with barcodes.
+- UIC demultiplexes files and sends an individual file for each sample barcode.
+Use the appropriate workflow script (Arg/UIC) depending on what format your reads are in.
 
 ### Environment:
-# Macqiime 1.9
-# conda python 3.5
-# vsearch 1.11.1
-# cutadapt 1.14
-# Arg_seq_functions.py in python path
-# Taxonomy database: Greengenes, Silva, or RDP currently (Requires downloading an external database)
-# Silva db notes (Super Useful): https://www.arb-silva.de/fileadmin/silva_databases/qiime/Silva_128_notes.txt
-# For now, I am trying the
+1. Macqiime 1.9+
+2. conda python 3.5
+3. vsearch 1.11.1
+4. cutadapt 1.14
+5. Taxonomy database: Greengenes, Silva, or RDP. Silva & RDP are preferred to greengenes but don't come with QIIME/requires downloading an external database
 
-### Seq processing workflow using subprocess:
-# 1. Pair Ends with qiime join_paired_ends
-# 2. Demultiplex wih qiime split_libraries
-# 3. Remove primers with cutadapt
-# 4. QC using vsearch
-# 5. Relabel sequences for vsearch using custom script
-# 6. Vsearch cluster reads
-# 7. Assign taxonomy to OTUs using a specififed database
-# 8. Create Qiime1 style BIOM table, add taxonomy, and summarize
-# 9. Align seqs and construct a tree using Qiime1's default options
+### Seq processing workflow using subprocess for Argonne reads:
+1. Pair Ends with **qiime** *join_paired_ends*
+
+2. Demultiplex wih **qiime** *split_libraries*
+3. Remove primers with **cutadapt**
+4. QC using **vsearch**
+5. Relabel sequences for **vsearch** using custom script
+6. **Vsearch** cluster reads
+7. Assign taxonomy to OTUs using a specififed database (**qiime**)
+8. Create **Qiime** style BIOM table, add taxonomy, and summarize
+9. Align seqs and construct a tree using **Qiime**1's default options
 
 ### TODO:
-# Enable logging of all terminal output and errors
-# Fix assign taxonomy with GG and RDP. Add support for the vsearch
-# consensus classifier.
-# Migrate code to Qiime2 if they fix vectorization issues with DADA2 performance and make better tools for interacting with artifacts.
-# Write tests. LOL probably not...
+1. Enable logging of all terminal output and errors
+2. Fix assign taxonomy with GG and RDP. Add support for the vsearch
+3. consensus classifier.
+4. Migrate code to Qiime2 if they fix vectorization issues with DADA2 performance and make better tools for interacting with artifacts.
 
 ### 0.9 Changelog
 # Added parameter file import option
