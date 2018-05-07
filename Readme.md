@@ -33,7 +33,7 @@ Get help/see flags for running individual steps:
 `python argseq.py --help`
 
 Required arguments:
-`--base_dir: Output goes here  
+`--base_dir: Output goes here`  
 --m: Map file, QIIME1 format  
 --forward: Forward Reads in correct format (see format descriptions)  
 --reverse: Reverse Reads "... "  
