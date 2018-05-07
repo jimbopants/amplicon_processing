@@ -2,7 +2,7 @@
 ## ArgSeq & UICSeq ReadMe
 This repo contains workflow scripts for processing Argonne's EMP formatted reads.
 
-### EMP Format Description:
+### 16S MIseq Format Descriptions I've seen:
 - Argonne deliver reads in a 3 file format - 1 forward and reverse file and a separate file with barcodes.
 - UIC demultiplexes files and sends an individual file for each sample barcode.
 Use the appropriate workflow script (Arg/UIC) depending on what format your reads are in.
@@ -25,15 +25,29 @@ Use the appropriate workflow script (Arg/UIC) depending on what format your read
 8. Create **Qiime** style BIOM table, add taxonomy, and summarize
 9. Align seqs and construct a tree using **Qiime**1's default options
 
+### Usage
+Run entire pipeline:
+'python argseq.py --base_dir DIR --m MAP --forward F.fasta --reverse R.fasta --barcodes B.fasta --params FILE.txt --all_thru_relabel --table_workflow'
+
+Get help/see flags for running individual steps:
+'python argseq.py --help' to see options
+
+Required arguments:
+--base_dir: Output goes here
+--m: Map file, QIIME1 format
+--forward: Forward Reads in correct format (see format descriptions)
+--reverse: Reverse Reads...
+--barcodes: Barcode file
+
+
 ### TODO:
 1. Enable logging of all terminal output and errors
-2. Fix assign taxonomy with GG and RDP. Add support for the vsearch
-3. consensus classifier.
+2. Fix assign taxonomy with GG and RDP. Add support for the vsearch consensus classifier.
 4. Migrate code to Qiime2 if they fix vectorization issues with DADA2 performance and make better tools for interacting with artifacts.
 
 ### 0.9 Changelog
-Added parameter file import option
-Merged most custom subprocess calls into a standardized function
-Reorganized upper level modules into main module and functions calls
-Added parameter logging and user input at run-time
-Removed diversity analyses pipelines since these are not one size fits all and I want more control over these.
+*Added parameter file import option
+*Merged most custom subprocess calls into a standardized function
+*Reorganized upper level modules into main module and functions calls
+*Added parameter logging and user input at run-time
+*Removed diversity analyses pipelines since these are not one size fits all and I want more control over these.

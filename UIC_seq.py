@@ -267,12 +267,16 @@ def option_check_and_set(args, params):
         if params['id_thresh'] is None:
             params['id_thresh'] = input('[Cluster] Enter OTU clustering threshold (default = 0.97): ')
         
-        if params['max_ee'] is None:
-            params['max_ee'] = input('[Filter] Max Errors (~.5-1 per 100bp or 1-3 per 250bp): ')
+        if params['max_ee_rate'] is None:
+            params['max_ee_rate'] = input('[Filter] Max Errors (~.5-1 per 100bp or 1-3 per 250bp): ')
         
-        if params['trunc_len'] is None:
-            params['trunc_len']= input('[Cutadapt] Enter length to trim sequences to: ')
+        if params['min_len'] is None:
+            params['min_len']= input('[Cutadapt] Enter minimum sequence length: ')
     
+        if params['max_len'] is None:
+            params['max_len']= input('[Cutadapt] Enter maximum sequence length: ')
+
+
     if args.cluster:
         if params['id_thresh'] is None:
             params['id_thresh'] = input('[Cluster] Enter OTU clustering threshold (default = 0.97): ')

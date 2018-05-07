@@ -45,7 +45,7 @@ def init_params(params):
             "rev_primer":None,
             "min_len":None,
             "max_len":None,
-            "max_ee":None,
+            "max_ee_rate":None,
             "min_OTU_size":None,
             }
 

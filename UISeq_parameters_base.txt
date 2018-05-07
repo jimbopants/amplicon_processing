@@ -1,0 +1,12 @@
+# Add primers, ID threshold here.
+# Reverse primer should be the reverse complement of the ordered reverse primer.
+# Min/max length refer to length after primers are trimmed.
+id_thresh	.97
+fwd_primer	ATAACAGGTCTGTGATGCCCT
+rev_primer	GTAGGTGAACCTGCRGAAGG
+max_len	350
+min_len	310
+max_ee_rate	.005	#expected errors per base, x100   = ee %age
+min_OTU_size	2
+#Deprecated:
+trunc_len	320	#Deprecated since switching to cutadapt.
