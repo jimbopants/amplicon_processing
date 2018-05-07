@@ -27,10 +27,10 @@ Use the appropriate workflow script (Arg/UIC) depending on what format your read
 
 ### Usage
 Run entire pipeline:
-'python argseq.py --base_dir DIR --m MAP --forward F.fasta --reverse R.fasta --barcodes B.fasta --params FILE.txt --all_thru_relabel --table_workflow'
+`python argseq.py --base_dir DIR --m MAP --forward F.fasta --reverse R.fasta --barcodes B.fasta --params FILE.txt --all_thru_relabel --table_workflow`
 
 Get help/see flags for running individual steps:
-'python argseq.py --help' to see options
+`python argseq.py --help`
 
 Required arguments:
 --base_dir: Output goes here
@@ -46,8 +46,8 @@ Required arguments:
 4. Migrate code to Qiime2 if they fix vectorization issues with DADA2 performance and make better tools for interacting with artifacts.
 
 ### 0.9 Changelog
-*Added parameter file import option
-*Merged most custom subprocess calls into a standardized function
-*Reorganized upper level modules into main module and functions calls
-*Added parameter logging and user input at run-time
-*Removed diversity analyses pipelines since these are not one size fits all and I want more control over these.
+-Added parameter file import option
+-Merged most custom subprocess calls into a standardized function
+-Reorganized upper level modules into main module and functions calls
+-Added parameter logging and user input at run-time
+-Removed diversity analyses pipelines since these are not one size fits all and I want more control over these.
