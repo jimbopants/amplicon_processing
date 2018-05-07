@@ -34,11 +34,11 @@ Get help/see flags for running individual steps:
 
 Required arguments:
 `--base_dir: Output goes here`  
---m: Map file, QIIME1 format  
---forward: Forward Reads in correct format (see format descriptions)  
---reverse: Reverse Reads "... "  
---barcodes: Barcode file  
-`
+`--m: Map file, QIIME1 format`  
+`--forward: Forward Reads in correct format (see format descriptions)`  
+`--reverse: Reverse Reads "..."`  
+`--barcodes: Barcode file`  
+
 
 ### TODO:
 1. Enable logging of all terminal output and errors
@@ -46,8 +46,8 @@ Required arguments:
 4. Migrate code to Qiime2 if they fix vectorization issues with DADA2 performance and make better tools for interacting with artifacts.
 
 ### 0.9 Changelog
--Added parameter file import option
--Merged most custom subprocess calls into a standardized function
--Reorganized upper level modules into main module and functions calls
--Added parameter logging and user input at run-time
+-Added parameter file import option  
+-Merged most custom subprocess calls into a standardized function  
+-Reorganized upper level modules into main module and functions calls  
+-Added parameter logging and user input at run-time  
 -Removed diversity analyses pipelines since these are not one size fits all and I want more control over these.
